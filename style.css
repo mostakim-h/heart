@@ -50,7 +50,12 @@
     box-shadow: -20px 0 20px rgba(0, 0, 0, 0.1);
 }
 
-
+P{
+    margin: 0;
+    font-size: 80px;
+    color: #ca0000;
+    font-weight: bolder;
+}
 
 
 

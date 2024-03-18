@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <div class="container">
+            <div class="heart"></div>
+            <p>E WITH ME</p>
+        </div>
+    </div>
+
+    <script src="anime.min.js"></script>
+    <script>
+        const container = document.querySelector('.container')
+        for (let i = 1; i <= 200; i++){
+          const hearts = document.createElement('div')
+          hearts.classList.add('heart');
+          container.appendChild(hearts)
+        }
+
+        function animateHearts(){
+          anime({
+            targets: '.heart',
+            translateX: function (){
+              return anime.random(-1000, 1000)
+            },
+            translateY: function (){
+              return anime.random(-1000, 1000)
+            },
+            // rotate: 45,
+            scale: function (){
+              return anime.random(1, 5)
+            },
+            easing: 'easeInOutBack',
+            duration: 2000,
+            delay: anime.stagger(10),
+            complete: animateHearts
+          })
+        }
+
+        animateHearts()
+    </script>
+</body>
+</html>
